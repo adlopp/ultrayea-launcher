@@ -31,6 +31,17 @@ If `Launcher.exe` itself changed, it is renamed to `Launcher.exe.old` (allowed
 on Windows even while running), the new build is put in place, and the `.old`
 file is removed on the next start.
 
+## Download
+
+Get `Launcher.exe` from the
+[Releases page](https://github.com/adlopp/ultrayea-launcher/releases).
+
+Windows release builds are code-signed for free by the
+**[SignPath Foundation](https://signpath.org)**'s open-source code-signing
+program. The signing runs in CI (see
+[`.github/workflows/build-sign.yml`](.github/workflows/build-sign.yml)), so every
+published `Launcher.exe` is built and signed straight from this repository.
+
 ## Security
 
 - Runs as `asInvoker` — it never requests administrator rights
@@ -41,9 +52,6 @@ file is removed on the next start.
   `manifest.json` `delete` list is rejected.
 - No registry access, no telemetry, no network access other than the GitHub
   API and the release asset download.
-
-Release builds are code-signed via [SignPath.io](https://signpath.io) (see
-[`.github/workflows/build-sign.yml`](.github/workflows/build-sign.yml)).
 
 ## Build
 
